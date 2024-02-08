@@ -1,0 +1,6 @@
+type: 'library'
+language: 'javascript'
+
+project:
+  name: 'uicomponents'
+  description: 'The UI components used used by the frontend'

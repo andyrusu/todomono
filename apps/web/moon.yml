@@ -1,0 +1,6 @@
+type: 'application'
+language: 'javascript'
+
+project:
+  name: 'web'
+  description: 'The frontend used for the todo app'

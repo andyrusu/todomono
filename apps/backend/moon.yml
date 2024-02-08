@@ -1,0 +1,6 @@
+type: 'application'
+language: 'javascript'
+
+project:
+  name: 'backend'
+  description: 'The backend API used for the todo app'
