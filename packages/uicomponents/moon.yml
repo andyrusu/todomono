@@ -1,14 +1,29 @@
 type: 'library'
 language: 'javascript'
 
+fileGroups:
+  configs:
+    - 'package.json'
+    - 'shadow-cljs.edn'
+  sources:
+    - 'src/**/*'
+  builds:
+    - 'public/portfolio/js'
+
 project:
   name: 'uicomponents'
   description: 'The UI components used used by the frontend'
 
 tasks:
   build-portfolio:
-    command: 'npx shadow-cljs compile portfolio'
+    command: 'shadow-cljs compile portfolio'
     inputs:
-      - 'src/**/*'
-      - 'package.json'
-      - 'shadow-cljs.edn'
+      - '@globs(sources)'
+      - '@files(configs)'
+    outputs:
+      - 'public/portfolio/js'
+  portfolio:
+    command: 'shadow-cljs server'
+    local: true
+    deps:
+      - 'build-portfolio'
