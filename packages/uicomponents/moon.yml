@@ -4,3 +4,11 @@ language: 'javascript'
 project:
   name: 'uicomponents'
   description: 'The UI components used used by the frontend'
+
+tasks:
+  build-portfolio:
+    command: 'npx shadow-cljs compile portfolio'
+    inputs:
+      - 'src/**/*'
+      - 'package.json'
+      - 'shadow-cljs.edn'
