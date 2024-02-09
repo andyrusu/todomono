@@ -4,3 +4,21 @@ language: 'javascript'
 project:
   name: 'web'
   description: 'The frontend used for the todo app'
+
+fileGroups:
+  configs:
+    - 'package.json'
+    - 'shadow-cljs.edn'
+  sources:
+    - 'src/**/*'
+  builds:
+    - 'public/js'
+
+tasks:
+  build:
+    command: 'shadow-cljs compile web'
+    inputs:
+      - '@globs(sources)'
+      - '@files(configs)'
+    outputs:
+      - 'public/js'

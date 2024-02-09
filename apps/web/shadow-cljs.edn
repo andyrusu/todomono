@@ -1,11 +1,15 @@
 ;; shadow-cljs configuration
 {:source-paths
- ["src/dev"
-  "src/main"
+ ["src/main"
   "src/test"]
 
  :dependencies
  []
 
+ :dev-http {8080 ["public" "classpath:public"]}
+
  :builds
- {}}
+ {:web {:target :browser
+        :output-dir "public/js"
+        :asset-path "js"
+        :modules {:main {:entries [todo.index]}}}}}
