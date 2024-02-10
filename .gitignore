@@ -4,4 +4,4 @@
 .moon/docker
 
 # calva
-.clj-kondo/cache
+.clj-kondo/.cache
