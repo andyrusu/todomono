@@ -3,15 +3,6 @@ $schema: 'https://moonrepo.dev/schemas/project.json'
 type: 'library'
 language: 'javascript'
 
-fileGroups:
-  configs:
-    - 'package.json'
-    - 'shadow-cljs.edn'
-  sources:
-    - 'src/**/*'
-  builds:
-    - 'public/portfolio/js'
-
 project:
   name: 'uicomponents'
   description: 'The UI components used used by the frontend'
@@ -20,5 +11,13 @@ tasks:
   portfolio:
     command: 'shadow-cljs watch portfolio'
     local: true
-    # deps:
-    #   - 'build-portfolio'
+  build:
+    command: 'shadow-cljs compile lib'
+    inputs:
+      - '@globs(sources)'
+      - '@files(configs)'
+    outputs:
+      - 'dist'
+  watch:
+    command: 'shadow-cljs watch lib'
+    local: true

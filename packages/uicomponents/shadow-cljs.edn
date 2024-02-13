@@ -16,7 +16,7 @@
               :asset-path "portfolio/js"
               :modules {:main {:entries [main.index]}}}
   :lib {:target :node-library
-        :output-to "componets.js"
+        :output-to "dist/componets.js"
         :output-dir "dist"
         :exports-fn todo.components/generate-exports
         :portfolio/enabled? false}}}
