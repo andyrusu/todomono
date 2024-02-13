@@ -1,0 +1,6 @@
+fileGroups:
+  configs:
+    - 'package.json'
+    - 'shadow-cljs.edn'
+  sources:
+    - 'src/**/*'
