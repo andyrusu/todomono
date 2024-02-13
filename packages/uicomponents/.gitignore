@@ -2,6 +2,7 @@ node_modules/
 public/js
 public/portfolio/js
 
+/dist
 /target
 /checkouts
 /src/gen
