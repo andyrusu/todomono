@@ -1,7 +1,7 @@
 ;; shadow-cljs configuration
 {:source-paths
  ["src/portfolio"
-  "src/main"
+  "src/components"
   "src/test"]
 
  :dependencies
@@ -14,4 +14,9 @@
  {:portfolio {:target :browser
               :output-dir "public/portfolio/js"
               :asset-path "portfolio/js"
-              :modules {:main {:entries [main.index]}}}}}
+              :modules {:main {:entries [main.index]}}}
+  :lib {:target :node-library
+        :output-to "componets.js"
+        :output-dir "dist"
+        :exports-fn todo.components/generate-exports
+        :portfolio/enabled? false}}}

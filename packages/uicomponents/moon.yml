@@ -17,15 +17,8 @@ project:
   description: 'The UI components used used by the frontend'
 
 tasks:
-  build-portfolio:
-    command: 'shadow-cljs compile portfolio'
-    inputs:
-      - '@globs(sources)'
-      - '@files(configs)'
-    outputs:
-      - 'public/portfolio/js'
   portfolio:
-    command: 'shadow-cljs server'
+    command: 'shadow-cljs watch portfolio'
     local: true
-    deps:
-      - 'build-portfolio'
+    # deps:
+    #   - 'build-portfolio'
